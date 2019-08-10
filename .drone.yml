@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+workspace:
+  base: /go
+  path: src/github.com/AgrimPrasad/drone-test
+
+steps:
+- name: build  
+  image: golang
+  commands:
+  - go build -o hello
+  - chmod -x hello
+  - ./hello
